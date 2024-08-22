@@ -1,0 +1,141 @@
+.main-container {
+  @apply m-auto w-full h-fit;
+  max-width: 900px;
+  /* min-height: ; */
+}
+
+.greet {
+  @apply font-semibold px-5 pb-5 text-6xl;
+  margin: 50px 0px;
+  color: #c4c7c5;
+}
+
+.main-container .greet span {
+  /* background: -webkit-linear-gradient(16deg, #4b90ff, #fc6a5d); */
+  background: linear-gradient(to right, #4b90ff, #9a6bb5, #fc6a5d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: greet 1.5s linear;
+}
+@keyframes greet {
+  0% {
+    background-position: -400px 0px;
+  }
+  100% {
+    background-position: 400px 0px;
+  }
+}
+
+.cards {
+  @apply grid gap-4 p-5;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.card {
+  @apply h-52 p-4 rounded-xl relative cursor-pointer bg-gray-200/55;
+  @apply hover:bg-gray-200;
+}
+
+.card img {
+  @apply w-9 p-1 absolute bg-white rounded-3xl bottom-3 right-3;
+}
+
+.card p {
+  color: #585858;
+  @apply text-base;
+}
+
+.main-bottom {
+  @apply w-full py-5 m-auto text-center;
+  max-width: 900px;
+}
+
+.search-box {
+  @apply flex items-center justify-between gap-5 p-3 mt-3;
+  border-radius: 50px;
+  background-color: #f0f4f9;
+}
+
+.search-box img {
+  @apply w-6;
+}
+
+.search-box input {
+  @apply bg-transparent border-none outline-none p-2 text-lg rounded-full;
+  flex: 1;
+}
+
+.search-box div {
+  @apply flex items-center gap-4;
+}
+
+.main .bottom-info {
+  @apply text-sm mx-4 my-auto text-center font-light;
+}
+
+.result {
+  @apply overflow-y-scroll;
+  padding: 0px 5%;
+  max-height: 70vh;
+}
+
+.result::-webkit-scrollbar {
+  display: none;
+}
+
+.result_title {
+  @apply my-7 flex items-center gap-5;
+}
+
+.result img {
+  @apply w-10 rounded-full;
+}
+
+.result_data {
+  @apply flex items-start gap-5;
+}
+
+.result_data p {
+  @apply mt-2;
+}
+
+.loader {
+  @apply flex flex-col gap-3 w-full;
+}
+
+.loader hr {
+  @apply rounded border-none h-5;
+  background-color: #f6f7f8;
+  background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
+  background-size: 800px 50px;
+  animation: loader 3s infinite linear;
+}
+@keyframes loader {
+  0% {
+    background-position: -800px 0px;
+  }
+  100% {
+    background-position: 800px 0px;
+  }
+}
+
+.result_data p {
+  @apply text-base font-light;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .main-bottom input {
+    flex: none;
+    width: 150px;
+  }
+  .main-bottom img {
+    width: 20px;
+  }
+  .search-box {
+    padding: 5px 10px;
+  }
+  .search-box div {
+    gap: 5px;
+  }
+}
