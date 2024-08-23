@@ -4,6 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Navbar from "@components/Navbar/Navbar";
 import Provider from "@components/Provider";
 import ContextProvider from "@components/ContextProvider/ContextProvider";
+import Footer from "@components/Footer/Footer";
 
 export const metadata = {
   title: "Origin",
@@ -13,18 +14,18 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/x-icon" href="/assets/app-logo.png" />
+      </head>
       <body>
         <Provider>
           <ContextProvider>
-            <div className="main">
-              <div className="gradient"></div>
-            </div>
-
             <main className="app pb-10">
               <Toaster />
               <Navbar />
               {children}
             </main>
+            <Footer />
           </ContextProvider>
         </Provider>
       </body>

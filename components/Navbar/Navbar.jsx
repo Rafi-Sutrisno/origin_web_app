@@ -40,7 +40,7 @@ const Navbar = () => {
 
         {session?.user ? (
           <div className="flex gap-3 md:gap-5">
-            <Link href={"/create-dream"} className="black_btn">
+            <Link href={"/"} className="black_btn">
               Get to know me
             </Link>
 
@@ -99,7 +99,7 @@ const Navbar = () => {
                   My Profile
                 </Link>
                 <Link
-                  href={"/create-dream"}
+                  href={"/"}
                   className="dropdown_link"
                   onClick={() => setToggleDrodown(false)}
                 >

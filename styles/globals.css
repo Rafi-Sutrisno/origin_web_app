@@ -24,7 +24,7 @@
   pointer-events: none;
 }
 
-.main:before {
+/* .main:before {
   background: radial-gradient(circle, rgba(250, 250, 250, 0) 0, #fafafa 100%);
   position: absolute;
   content: "";
@@ -43,9 +43,9 @@
   top: 0;
   opacity: 0.4;
   filter: invert(1);
-}
+} */
 
-.gradient {
+.gradient .test {
   height: fit-content;
   z-index: 3;
   width: 100%;

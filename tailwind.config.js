@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         outfit: ["Outfit", "Outfit"],
+        caveat: ["Caveat", "Caveat"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
