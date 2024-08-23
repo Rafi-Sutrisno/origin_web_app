@@ -18,8 +18,15 @@ const ContextProvider = (props) => {
 
   const [figuresImage, setFiguresImage] = useState(["", "", ""]);
 
+  const delayParam = (index, nextword) => {
+    setTimeout(function () {
+      setMeaning((prev) => prev + nextword);
+    }, 150 * index);
+  };
+
   const onSent = async () => {
     setResultData("");
+    setMeaning("");
     setLoading(true);
     setShowResult(true);
     setFigures([]);
@@ -29,6 +36,7 @@ const ContextProvider = (props) => {
     let response;
     const prompt = `Provide a brief explanation of the name ${input} in the first paragraph, including its meaning and origin. In the second paragraph, list 3 (max) historical figures who share similar names, including the years they lived (prioritize those that might be on wikipedia). Only answer using the following format (strict formatting always use . in historical figures, exception: if you dont find any historical figures just write None for Historical Figures) : For example: "Name is ...", followed by "Historical Figures: [Name] (Year) Known as ...(.) [Name] (Year) Known as ...(.) [Name] (Year) Known as ...(.)" 2nd example : "Name is ...", followed by "Historical Figures: [Name] (Year) Known as ...(.) [Name] (Year) Known as ...(.) None (.)" 3nd example : "Name is ...", followed by "Historical Figures: None (.) None (.) None (.)" `;
     response = await run(prompt);
+    console.log(response);
 
     try {
       let rspArray = response.split("**");
@@ -56,7 +64,12 @@ const ContextProvider = (props) => {
   const DataSplit = (data) => {
     let figuresnames = [];
     let split1 = data.split("Historical Figures:")[0];
-    setMeaning(split1);
+
+    let newResponseArray = split1.split(" ");
+    for (let i = 0; i < newResponseArray.length; i++) {
+      const nextword = newResponseArray[i];
+      delayParam(i, nextword + " ");
+    }
 
     let split2 = data.split("Historical Figures:")[1];
     let historicalFigures = split2.split("(.)");
