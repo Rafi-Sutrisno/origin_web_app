@@ -67,7 +67,7 @@
 }
 
 .search-box input {
-  @apply border-none outline-none p-2 px-3 text-lg w-fit bg-transparent;
+  @apply border-none outline-none p-2 sm:px-3 sm:text-lg w-fit bg-transparent text-sm;
 }
 
 .main-bottom .bottom-info {

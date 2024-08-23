@@ -20,7 +20,7 @@ const RootLayout = ({ children }) => {
       <body>
         <Provider>
           <ContextProvider>
-            <main className="app pb-10">
+            <main className="app">
               <Toaster />
               <Navbar />
               {children}

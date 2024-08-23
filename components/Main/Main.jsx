@@ -19,6 +19,10 @@ const Main = () => {
     figuresImage,
   } = useContext(Context);
 
+  const send_style = {
+    cursor: input ? "pointer" : "not-allowed",
+  };
+
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && input) {
       handleOnSent();
@@ -60,10 +64,10 @@ const Main = () => {
             />
 
             <img
-              onClick={() => handleOnSent()}
               src={"/assets/send_icon.png"}
               alt=""
-              className="cursor-pointer"
+              style={send_style}
+              onClick={() => (input ? handleOnSent() : null)}
             />
           </div>
         </div>
