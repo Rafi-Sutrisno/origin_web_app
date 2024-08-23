@@ -108,7 +108,7 @@ const Navbar = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    setToggleDrodown(True);
+                    setToggleDrodown(false);
                     signOut();
                   }}
                   className="mt-5 w-full black_btn"
